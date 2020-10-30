@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "../include/tools/time.h"
+#include "../include/tools/tools.h"
 #include "../include/bcc.h"
 
 void sub::bcc::import_from_string(std::string str)
@@ -39,13 +39,5 @@ void sub::bcc::import_from_string(std::string str)
 
 void sub::bcc::import_from_file(std::string path)
 {
-    std::ifstream f_in(path);
-
-    std::string res_str;
-    std::string temp_str;
-
-    while (std::getline(f_in, temp_str))
-        res_str += temp_str + "\n";
-
-    this->import_from_string(res_str);
+    this->import_from_string(tools::file_to_string(path));
 }

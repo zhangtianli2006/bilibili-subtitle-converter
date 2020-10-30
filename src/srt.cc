@@ -4,19 +4,11 @@
 #include <vector>
 
 #include "../include/srt.h"
-#include "../include/time.h"
+#include "../include/tools/tools.h"
 
 void sub::srt::import_from_file(std::string path)
 {
-    std::ifstream f_in(path);
-
-    std::string res_str;
-    std::string temp_str;
-
-    while (std::getline(f_in, temp_str))
-        res_str += temp_str + "\n";
-
-    this->import_from_string(res_str);
+    this->import_from_string(tools::file_to_string(path));
 }
 
 void sub::srt::import_from_string(std::string str)
@@ -38,6 +30,8 @@ void sub::srt::import_from_string(std::string str)
 
         temp_content.start_time.parse_from_srt_time(start_time_str);
         temp_content.end_time.parse_from_srt_time(end_time_str);
+
+        ss.get();
 
         std::string temp_str;
         while (std::getline(ss, temp_str))

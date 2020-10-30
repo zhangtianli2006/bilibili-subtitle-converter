@@ -10,6 +10,7 @@ SET(CMAKE_CXX_STANDARD 17)
 
 SET(SRC_LIB_LIST 
     ${PROJECT_SOURCE_DIR}/src/tools/time.cc
+    ${PROJECT_SOURCE_DIR}/src/tools/fs.cc
     ${PROJECT_SOURCE_DIR}/src/bcc.cc
     ${PROJECT_SOURCE_DIR}/src/srt.cc
 )

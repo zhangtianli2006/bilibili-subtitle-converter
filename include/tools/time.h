@@ -1,9 +1,9 @@
-#ifndef TIME_H
-#define TIME_H
+#ifndef TOOLS_TIME_H
+#define TOOLS_TIME_H
 
 #include <string>
 
-namespace tool
+namespace tools
 {
 class time_stamp
 {
@@ -21,6 +21,6 @@ public:
     void parse_from_bcc_time(std::string str);
 
 };
-} // namespace tool
+} // namespace tools
 
 #endif

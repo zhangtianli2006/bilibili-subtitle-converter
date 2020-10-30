@@ -6,7 +6,7 @@
 
 #include "../../include/tools/time.h"
 
-void tool::time_stamp::init(unsigned short h, unsigned short m, unsigned short s, unsigned short ms)
+void tools::time_stamp::init(unsigned short h, unsigned short m, unsigned short s, unsigned short ms)
 {
     this->hour = h;
     this->minute = m;
@@ -14,7 +14,7 @@ void tool::time_stamp::init(unsigned short h, unsigned short m, unsigned short s
     this->milli_second = ms;
 }
 
-void tool::time_stamp::parse_from_second(int second)
+void tools::time_stamp::parse_from_second(int second)
 {
     this->second = second % 60;
     second /= 60;
@@ -26,7 +26,7 @@ void tool::time_stamp::parse_from_second(int second)
     second /= 60;
 }
 
-void tool::time_stamp::parse_from_srt_time(std::string str)
+void tools::time_stamp::parse_from_srt_time(std::string str)
 {
     std::stringstream ss;
 
@@ -46,7 +46,7 @@ void tool::time_stamp::parse_from_srt_time(std::string str)
     ss >> this->milli_second;
 }
 
-void tool::time_stamp::parse_from_bcc_time(std::string str)
+void tools::time_stamp::parse_from_bcc_time(std::string str)
 {
     size_t dot = 0;
     for (size_t i = 0; i < str.size(); i++)

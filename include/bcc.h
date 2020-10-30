@@ -4,15 +4,15 @@
 #include <vector>
 #include <string>
 
-#include "./tools/time.h"
+#include "./tools/tools.h"
 
 namespace sub
 {
 class bcc_content
 {
 public:
-    tool::time_stamp from;
-    tool::time_stamp to;
+    tools::time_stamp from;
+    tools::time_stamp to;
     unsigned int location;
 
     std::string content;

@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "./tools/time.h"
+#include "./tools/tools.h"
 
 namespace sub
 {
@@ -12,8 +12,8 @@ class srt_content
 {
 public:
     size_t id;
-    tool::time_stamp start_time;
-    tool::time_stamp end_time;
+    tools::time_stamp start_time;
+    tools::time_stamp end_time;
 
     std::string content;
 };
