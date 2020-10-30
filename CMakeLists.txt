@@ -13,6 +13,7 @@ SET(SRC_LIB_LIST
     ${PROJECT_SOURCE_DIR}/src/tools/fs.cc
     ${PROJECT_SOURCE_DIR}/src/bcc.cc
     ${PROJECT_SOURCE_DIR}/src/srt.cc
+    ${PROJECT_SOURCE_DIR}/src/converter.cc
 )
 
 SET(SRC_MAIN_LST

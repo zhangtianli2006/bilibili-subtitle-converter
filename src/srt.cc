@@ -51,7 +51,7 @@ std::string sub::srt::export_to_string()
     {
         res += std::to_string(i.id) + "\n";
         res += i.start_time.export_to_colon_time() + " --> " + i.end_time.export_to_colon_time() + "\n";
-        res += i.content + "\n";
+        res += i.content + "\n\n";
     }
     
     return res;
