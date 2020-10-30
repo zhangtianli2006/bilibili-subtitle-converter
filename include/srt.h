@@ -24,6 +24,9 @@ public:
     void import_from_file(std::string path);
     void import_from_string(std::string str);
 
+    std::string export_to_string();
+    void export_to_file(std::string path);
+
     std::vector<srt_content> content;
 };
 } // namespace sub

@@ -63,3 +63,31 @@ double tools::time_stamp::export_to_second()
 
     return res;
 }
+
+std::string tools::time_stamp::export_to_colon_time()
+{
+    std::string res;
+    std::string temp_str;
+
+    std::stringstream ss;
+    ss << std::setw(2) << std::setiosflags(std::ios::right) << std::setfill('0') << this->hour;
+    ss >> temp_str;
+    res += temp_str + ":";
+    ss.clear();
+
+    ss << std::setw(2) << std::setiosflags(std::ios::right) << std::setfill('0') << this->minute;
+    ss >> temp_str;
+    res += temp_str + ":";
+    ss.clear();
+
+    ss << std::setw(2) << std::setiosflags(std::ios::right) << std::setfill('0') << this->second;
+    ss >> temp_str;
+    res += temp_str + ".";
+    ss.clear();
+
+    ss << std::setw(3) << std::setiosflags(std::ios::right) << std::setfill('0') << this->milli_second;
+    ss >> temp_str;
+    res += temp_str;
+
+    return res;
+}

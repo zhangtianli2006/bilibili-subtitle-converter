@@ -15,3 +15,9 @@ std::string tools::file_to_string(std::string file_path)
 
     return res;
 }
+
+void tools::string_to_file(std::string str, std::string file_path)
+{
+    std::ofstream f_out(file_path);
+    f_out << str;
+}

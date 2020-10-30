@@ -76,6 +76,5 @@ std::string sub::bcc::export_to_string()
 
 void sub::bcc::export_to_file(std::string path)
 {
-    std::ofstream f_out(path);
-    f_out << this->export_to_string();
+    tools::string_to_file(this->export_to_string(), path);
 }

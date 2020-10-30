@@ -19,6 +19,7 @@ public:
     void parse_from_bcc_time(std::string str);
     
     double export_to_second();
+    std::string export_to_colon_time();
 };
 } // namespace tools
 

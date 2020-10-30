@@ -6,10 +6,7 @@
 #include "../include/srt.h"
 #include "../include/tools/tools.h"
 
-void sub::srt::import_from_file(std::string path)
-{
-    this->import_from_string(tools::file_to_string(path));
-}
+void sub::srt::import_from_file(std::string path) { this->import_from_string(tools::file_to_string(path)); }
 
 void sub::srt::import_from_string(std::string str)
 {
@@ -44,4 +41,23 @@ void sub::srt::import_from_string(std::string str)
 
         this->content.push_back(temp_content);
     }
+}
+
+std::string sub::srt::export_to_string()
+{
+    std::string res;
+
+    for (auto i : this->content)
+    {
+        res += std::to_string(i.id) + "\n";
+        res += i.start_time.export_to_colon_time() + " --> " + i.end_time.export_to_colon_time() + "\n";
+        res += i.content + "\n";
+    }
+    
+    return res;
+}
+
+void sub::srt::export_to_file(std::string path)
+{
+    tools::string_to_file(this->export_to_string(), path);
 }
