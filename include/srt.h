@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "./time.h"
+#include "./tools/time.h"
 
 namespace sub
 {
@@ -21,10 +21,9 @@ public:
 class srt
 {
 public:
-    void import_from_file(std::string file_path);
+    void import_from_file(std::string path);
     void import_from_string(std::string str);
 
-private:
     std::vector<srt_content> content;
 };
 } // namespace sub

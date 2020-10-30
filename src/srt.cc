@@ -6,9 +6,9 @@
 #include "../include/srt.h"
 #include "../include/time.h"
 
-void sub::srt::import_from_file(std::string file_path)
+void sub::srt::import_from_file(std::string path)
 {
-    std::ifstream f_in(file_path);
+    std::ifstream f_in(path);
 
     std::string res_str;
     std::string temp_str;
@@ -36,8 +36,8 @@ void sub::srt::import_from_string(std::string str)
         std::string arrow;
         ss >> start_time_str >> arrow >> end_time_str;
 
-        temp_content.start_time.parse_from_srt(start_time_str);
-        temp_content.end_time.parse_from_srt(end_time_str);
+        temp_content.start_time.parse_from_srt_time(start_time_str);
+        temp_content.end_time.parse_from_srt_time(end_time_str);
 
         std::string temp_str;
         while (std::getline(ss, temp_str))
