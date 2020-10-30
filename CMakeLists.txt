@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.16)
+
+PROJECT(bilibili-subtitle-converter)
+
+INCLUDE_DIRECTORIES(
+    include/
+)
+
+SET(CMAKE_CXX_STANDARD 17)
+
+SET(SRC_LIB_LIST 
+    ${PROJECT_SOURCE_DIR}/src/tools/time.cc
+    ${PROJECT_SOURCE_DIR}/src/bcc.cc
+    ${PROJECT_SOURCE_DIR}/src/srt.cc
+)
+
+SET(SRC_MAIN_LST
+    ${SRC_LIB_LIST}
+    ${PROJECT_SOURCE_DIR}/src/main.cc
+)
+
+FIND_PACKAGE(PkgConfig)
+
+PKG_SEARCH_MODULE(JSONCPP REQUIRED jsoncpp)
+
+LINK_LIBRARIES(
+    ${JSONCPP_LIBRARIES}
+)
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${SRC_MAIN_LST})
+
