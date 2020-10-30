@@ -13,13 +13,12 @@ public:
     unsigned short second;
     unsigned short milli_second;
 
-    void init(unsigned short h, unsigned short m, unsigned short s, unsigned short ms);
-
-    void parse_from_second(int second);
+    void parse_from_second(double second);
 
     void parse_from_srt_time(std::string str);
     void parse_from_bcc_time(std::string str);
-
+    
+    double export_to_second();
 };
 } // namespace tools
 

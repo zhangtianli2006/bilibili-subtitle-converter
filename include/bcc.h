@@ -24,6 +24,9 @@ public:
     void import_from_string(std::string str);
     void import_from_file(std::string path);
 
+    std::string export_to_string();
+    void export_to_file(std::string path);
+
     float font_size;
     std::string font_color;
     float background_alpha;
