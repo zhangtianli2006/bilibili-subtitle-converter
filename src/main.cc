@@ -3,13 +3,16 @@
 #include <cstring>
 #include <iostream>
 #include <string>
-#include <tuple>
 
 #include "../include/subtitle.h"
 #include "../include/converter.h"
 
 int main(int argc, char **argv)
 {
+    #ifdef __WIN32
+    #elif __linux
+    #endif
+
     args::ArgumentParser parser("CC subtitle converter Tianli Zhang (2020)");
     args::HelpFlag help(parser, "help", "Display this help menu", {'h', "help"});
 
