@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-PROJECT(bilibili-subtitle-converter)
+PROJECT(CC-converter)
 
 INCLUDE_DIRECTORIES(
     include/
