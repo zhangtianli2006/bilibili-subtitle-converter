@@ -18,18 +18,6 @@ public:
     std::string content;
 };
 
-class bcc_config
-{
-public:
-    float font_size;
-    std::string font_color;
-    float background_alpha;
-    std::string background_color;
-    std::string stroke;
-
-    bcc_config();
-};
-
 class bcc
 {
 public:
@@ -38,8 +26,6 @@ public:
 
     std::string export_to_string();
     void export_to_file(std::string path);
-
-    bcc_config config;
 
     std::vector<bcc_content> body;
 };
