@@ -27,6 +27,12 @@ public:
     std::string export_to_string();
     void export_to_file(std::string path);
 
+    float font_size;
+    std::string font_color;
+    float background_alpha;
+    std::string background_color;
+    std::string stroke;
+
     std::vector<bcc_content> body;
 };
 

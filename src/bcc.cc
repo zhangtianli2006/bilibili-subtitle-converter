@@ -1,7 +1,4 @@
 #include <json/json.h>
-#ifdef __WIN32
-#include <filesystem>
-#endif
 #include <fstream>
 #include <string>
 #include <vector>
@@ -17,11 +14,11 @@ void sub::bcc::import_from_string(std::string str)
     Json::Value root;
     ss >> root;
 
-    this->config.font_size = root["font_size"].asFloat();
-    this->config.font_color = root["font_color"].asString();
-    this->config.background_alpha = root["background_alpha"].asFloat();
-    this->config.background_color = root["background_color"].asString();
-    this->config.stroke = root["Stroke"].asString();
+    this->font_size = root["font_size"].asFloat();
+    this->font_color = root["font_color"].asString();
+    this->background_alpha = root["background_alpha"].asFloat();
+    this->background_color = root["background_color"].asString();
+    this->stroke = root["Stroke"].asString();
 
     for (int i = 0; i < root["body"].size(); i++)
     {
@@ -45,11 +42,11 @@ void sub::bcc::import_from_file(std::string path) { this->import_from_string(too
 std::string sub::bcc::export_to_string()
 {
     Json::Value root;
-    root["font_size"] = this->config.font_size;
-    root["font_color"] = this->config.font_color;
-    root["background_alpha"] = this->config.background_alpha;
-    root["background_color"] = this->config.background_color;
-    root["Stroke"] = this->config.stroke;
+    root["font_size"] = this->font_size;
+    root["font_color"] = this->font_color;
+    root["background_alpha"] = this->background_alpha;
+    root["background_color"] = this->background_color;
+    root["Stroke"] = this->stroke;
 
     for (int i = 0; i < this->body.size(); i++)
     {
@@ -77,4 +74,7 @@ std::string sub::bcc::export_to_string()
     return oss.str();
 }
 
-void sub::bcc::export_to_file(std::string path) { tools::string_to_file(this->export_to_string(), path); }
+void sub::bcc::export_to_file(std::string path)
+{
+    tools::string_to_file(this->export_to_string(), path);
+}
